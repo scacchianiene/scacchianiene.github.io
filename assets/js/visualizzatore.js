@@ -149,6 +149,7 @@
     var visibili = partite.filter(function (p) {
       return !filtro || [p.bianco, p.nero, p.open, L(p, "evento"), turnoN(p.turno)].join(" ").toLowerCase().indexOf(filtro) !== -1;
     });
+    if (!partite.length) return;
     if (!visibili.length) {
       elLista.appendChild(el("li", { class: "nessuna", testo: T("Nessuna partita corrisponde alla ricerca. Prova con un altro nome.", "No game matches your search. Try another name.") }));
       return;
@@ -186,10 +187,11 @@
     var iniziale = partite.filter(function (p) { return p.id === richiesta; })[0] || partite[0];
     apri(iniziale);
   } else {
-    document.getElementById("titolo-partita").textContent = T("Nessuna partita pubblicata", "No games published yet");
-    var vuoto = document.getElementById("nessuna-partita");
-    var area = document.querySelector(".partite");
-    if (vuoto) { vuoto.hidden = false; }
-    if (area) { area.hidden = true; }
+    // Nessuna partita ancora: resta visibile la struttura, con la scacchiera nella posizione iniziale.
+    corrente = { id: "", mosse: [], fens: ["rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"], da: [], a: [], bianco: "", nero: "" };
+    passo = 0;
+    scriviGiocatori();
+    disegnaScacchiera();
+    document.getElementById("scarica").hidden = true;
   }
 })();
