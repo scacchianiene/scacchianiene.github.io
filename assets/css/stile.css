@@ -1,0 +1,330 @@
+/* Sito delle iniziative – A.S.D. Scacchi Valle dell'Aniene
+   Stile ricavato dal bando "S.V.A. Carnival Chess Trophy – Tivoli 2027". */
+
+@font-face { font-family: "Gelasio"; src: url("../fonts/gelasio-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Gelasio"; src: url("../fonts/gelasio-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Gelasio"; src: url("../fonts/gelasio-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Mr Dafoe"; src: url("../fonts/mr-dafoe-latin-400-normal.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Michroma"; src: url("../fonts/michroma-latin-400-normal.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Arimo"; src: url("../fonts/arimo-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Arimo"; src: url("../fonts/arimo-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Arimo"; src: url("../fonts/arimo-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+
+:root {
+  --avorio: #f5eedc;
+  --avorio-chiaro: #faf5e8;
+  --bordeaux: #590d17;
+  --bordeaux-scuro: #35010e;
+  --oro: #8e6b2f;
+  --oro-chiaro: #c9a24b;
+  --inchiostro: #1d1716;
+  --casa-chiara: #efe1c2;
+  --casa-scura: #b08f5c;
+  --titolo: "Gelasio", Georgia, "Times New Roman", serif;
+  --mano: "Mr Dafoe", "Brush Script MT", cursive;
+  --largo: "Michroma", "Arial Black", sans-serif;
+  --testo: "Arimo", Arial, Helvetica, sans-serif;
+  --larghezza: 68rem;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--avorio);
+  color: var(--bordeaux);
+  font-family: var(--testo);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--bordeaux); text-underline-offset: 0.18em; }
+a:hover { color: var(--oro); }
+:focus-visible { outline: 3px solid var(--oro-chiaro); outline-offset: 3px; }
+
+.contenitore { width: min(100% - 2.5rem, var(--larghezza)); margin-inline: auto; }
+
+/* ---------- Barra di navigazione ---------- */
+.barra {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--bordeaux-scuro);
+  border-bottom: 3px solid var(--oro);
+}
+.barra .contenitore { display: flex; align-items: center; gap: 1.5rem; min-height: 3.5rem; flex-wrap: wrap; padding-block: 0.4rem; }
+.barra .marchio { font-family: var(--titolo); font-size: 1.15rem; color: var(--avorio); text-decoration: none; margin-right: auto; }
+.barra nav { display: flex; gap: 0.25rem 1.15rem; flex-wrap: wrap; align-items: center; }
+.barra nav a { color: var(--avorio); text-decoration: none; font-size: 0.98rem; padding: 0.35rem 0; border-bottom: 2px solid transparent; }
+.barra nav a:hover, .barra nav a[aria-current="page"] { border-bottom-color: var(--oro-chiaro); color: #fff; }
+.barra nav a.iscriviti { background: var(--oro-chiaro); color: var(--bordeaux-scuro); font-weight: 700; padding: 0.4rem 0.9rem; border-radius: 2px; border-bottom: 0; }
+.barra nav a.iscriviti:hover { background: #fff; }
+
+.avviso-bozza { margin: 0; background: var(--oro); color: #fff; text-align: center; font-size: 0.9rem; padding: 0.35rem 1rem; }
+
+/* ---------- Testata (riprende la copertina del bando) ---------- */
+.testata { display: grid; grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr); min-height: 40rem; }
+.testata .pannello { background: var(--avorio) url("../img/pannello.jpg") left bottom / cover no-repeat; }
+.testata .cartello { padding: 2.5rem 1.5rem 3rem; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.testata .logo { width: 8.5rem; }
+.testata h1 { font-family: var(--titolo); font-weight: 400; font-size: clamp(2.3rem, 5.2vw, 4.1rem); line-height: 1.05; margin: 0.6rem 0 0.2rem; letter-spacing: -0.01em; text-wrap: balance; }
+.testata .luogo { font-weight: 700; font-size: 1.35rem; margin: 0; }
+.testata .pezzi { width: 12rem; margin: 1.2rem 0 0.6rem; }
+.testata .ente, .testata .date { font-family: var(--largo); color: var(--inchiostro); text-transform: uppercase; margin: 0; line-height: 1.5; }
+.testata .ente { font-size: 0.95rem; }
+.testata .date { font-size: 1.05rem; margin-top: 0.5rem; }
+.testata .sede { margin: 1.6rem 0 0; font-size: 1.15rem; }
+.testata .montepremi { font-weight: 700; font-size: 1.7rem; margin: 1.2rem 0; padding: 0.9rem 2rem; border-block: 3px solid var(--bordeaux); }
+.testata .formula { list-style: none; margin: 0; padding: 0; font-size: 1.12rem; line-height: 1.6; }
+.testata .azioni { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; margin-top: 1.6rem; }
+.testata .patrocinio { display: flex; align-items: center; gap: 0.8rem; margin-top: 1.8rem; font-size: 0.92rem; text-align: left; line-height: 1.3; }
+.testata .patrocinio img { width: 3.4rem; }
+
+.bottone { display: inline-block; font-weight: 700; text-decoration: none; padding: 0.75rem 1.4rem; border: 2px solid var(--bordeaux); border-radius: 2px; }
+.bottone.pieno { background: var(--bordeaux); color: var(--avorio); }
+.bottone.pieno:hover { background: var(--bordeaux-scuro); color: #fff; }
+.bottone.vuoto:hover { background: var(--bordeaux); color: var(--avorio); }
+
+/* ---------- Sezioni (titolo a mano + filetto bordeaux, come nel bando) ---------- */
+.sezione { border-top: 6px solid var(--bordeaux); padding: 2.6rem 0 3.2rem; }
+.sezione > .contenitore > h2, .titolo-pagina { font-family: var(--mano); font-weight: 400; font-size: clamp(2.6rem, 6vw, 3.9rem); line-height: 1.1; text-align: center; margin: 0 0 1.8rem; transform: rotate(-2deg); }
+.sezione p { max-width: 44rem; margin: 0 auto 1rem; }
+.sezione .centrato { text-align: center; }
+.sottotitolo { font-weight: 700; text-transform: uppercase; text-align: center; margin: 2rem 0 0.6rem; font-size: 1.1rem; }
+.oro { color: var(--oro); }
+
+/* colonne separate da barre dorate verticali, come Calendario e Montepremi nel bando */
+.colonne { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 60rem; margin-inline: auto; }
+.colonne > div { padding: 0.4rem 1.5rem; border-left: 12px solid var(--oro); }
+.colonne > div:first-child { border-left: 0; }
+.colonne h3 { margin: 0 0 0.3rem; font-size: 1.1rem; text-transform: uppercase; }
+.colonne ul { list-style: none; margin: 0; padding: 0; }
+.colonne li { padding: 0.12rem 0; }
+
+.due-liste { display: grid; grid-template-columns: repeat(2, max-content); justify-content: center; gap: 0 4rem; list-style: none; padding: 0; margin: 0 0 1.4rem; grid-auto-flow: column; grid-template-rows: repeat(4, auto); }
+.due-liste li { padding: 0.15rem 0; }
+
+.riquadro { max-width: 44rem; margin: 1.8rem auto 0; border-block: 6px solid var(--bordeaux); padding: 1.3rem 0; }
+.riquadro p { margin: 0 0 0.25rem; }
+.riquadro h3 { margin: 0 0 0.6rem; text-align: center; text-transform: uppercase; font-size: 1.1rem; }
+
+.regolamento { max-width: 50rem; margin-inline: auto; }
+.regolamento p { max-width: none; text-align: justify; hyphens: auto; }
+.regolamento h3 { text-align: center; text-transform: uppercase; font-size: 1.05rem; margin: 1.6rem 0 0.4rem; }
+details.regolamento > summary { cursor: pointer; text-align: center; font-weight: 700; padding: 0.8rem; border: 2px solid var(--bordeaux); max-width: 24rem; margin: 0 auto 1.5rem; list-style-position: inside; }
+
+.albergo { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; max-width: 58rem; margin-inline: auto; align-items: start; }
+.albergo h3 { font-family: var(--titolo); font-weight: 600; font-style: italic; font-size: 1.6rem; margin: 0.8rem 0 0.3rem; }
+.albergo img { width: 9rem; }
+.albergo dl { margin: 0; display: grid; grid-template-columns: 1fr auto; gap: 0.3rem 1.5rem; }
+.albergo dt { margin: 0; } .albergo dd { margin: 0; font-weight: 700; text-align: right; }
+.albergo .nota { font-size: 0.93rem; }
+
+/* ---------- Piè di pagina ---------- */
+.piede { border-top: 6px solid var(--bordeaux); background: var(--avorio) url("../img/maschera-dx.jpg") right bottom / auto 100% no-repeat; padding: 2rem 0 2.5rem; min-height: 15rem; }
+.piede .loghi { display: flex; flex-wrap: wrap; gap: 1.5rem 2.2rem; align-items: center; margin-bottom: 1.4rem; max-width: 46rem; }
+.piede .loghi img { height: 3.6rem; width: auto; }
+.piede p { margin: 0 0 0.3rem; max-width: 40rem; font-size: 0.95rem; }
+
+/* ---------- Pagine interne ---------- */
+.intestazione-pagina { padding: 2.4rem 0 0.6rem; text-align: center; }
+.intestazione-pagina p { max-width: 42rem; margin: 0 auto; }
+.etichetta-esempio { display: inline-block; background: var(--oro); color: #fff; font-size: 0.85rem; font-weight: 700; padding: 0.15rem 0.6rem; border-radius: 2px; }
+
+/* Turni */
+.scelta-turno { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 1.5rem 0; }
+.scelta-turno button { font: inherit; font-weight: 700; color: var(--bordeaux); background: transparent; border: 2px solid var(--bordeaux); padding: 0.5rem 1rem; border-radius: 2px; cursor: pointer; }
+.scelta-turno button[aria-pressed="true"] { background: var(--bordeaux); color: var(--avorio); }
+.scelta-turno button small { display: block; font-weight: 400; font-size: 0.8rem; }
+.torneo-open { max-width: 54rem; margin: 0 auto 2.2rem; }
+.torneo-open h3 { font-family: var(--titolo); font-weight: 600; font-size: 1.6rem; margin: 0 0 0.5rem; border-left: 12px solid var(--oro); padding-left: 0.8rem; }
+table.accoppiamenti { width: 100%; border-collapse: collapse; background: var(--avorio-chiaro); }
+table.accoppiamenti th { text-align: left; font-size: 0.85rem; padding: 0.5rem 0.6rem; background: var(--bordeaux); color: var(--avorio); font-weight: 700; }
+table.accoppiamenti td { padding: 0.55rem 0.6rem; border-bottom: 1px solid #d9c9a6; vertical-align: middle; }
+table.accoppiamenti .num { width: 3rem; color: var(--oro); font-weight: 700; }
+table.accoppiamenti .ris { text-align: center; font-weight: 700; white-space: nowrap; font-family: var(--titolo); font-size: 1.15rem; color: var(--inchiostro); }
+table.accoppiamenti .elo { color: var(--oro); font-size: 0.9rem; margin-left: 0.4rem; }
+table.accoppiamenti .vince { font-weight: 700; }
+table.accoppiamenti a.apri { display: inline-block; white-space: nowrap; font-size: 0.9rem; font-weight: 700; text-decoration: none; border: 2px solid var(--bordeaux); padding: 0.2rem 0.6rem; border-radius: 2px; }
+table.accoppiamenti a.apri:hover { background: var(--bordeaux); color: var(--avorio); }
+.in-attesa { text-align: center; padding: 2rem 1rem; border: 2px dashed var(--oro); max-width: 40rem; margin: 1rem auto 2.5rem; }
+.nota-ufficiale { font-size: 0.93rem; text-align: center; max-width: 44rem; margin: 2rem auto; }
+
+/* Partite: tre colonne (elenco, scacchiera, mosse) */
+.partite { display: grid; grid-template-columns: minmax(15rem, 20rem) minmax(18rem, 34rem) minmax(15rem, 1fr); gap: 1.5rem; align-items: start; padding: 1.5rem 0 3rem; width: min(100% - 2.5rem, 84rem); margin-inline: auto; }
+.elenco input[type="search"] { width: 100%; font: inherit; padding: 0.55rem 0.7rem; border: 2px solid var(--bordeaux); background: var(--avorio-chiaro); color: var(--inchiostro); border-radius: 2px; }
+.elenco label { display: block; font-weight: 700; margin-bottom: 0.3rem; font-size: 0.95rem; }
+.elenco ol { list-style: none; margin: 0.8rem 0 0; padding: 0; max-height: 34rem; overflow: auto; border-top: 3px solid var(--bordeaux); }
+.elenco li button { display: block; width: 100%; text-align: left; font: inherit; color: var(--bordeaux); background: transparent; border: 0; border-bottom: 1px solid #d9c9a6; padding: 0.6rem 0.5rem; cursor: pointer; }
+.elenco li button:hover { background: var(--avorio-chiaro); }
+.elenco li button[aria-current="true"] { background: var(--bordeaux); color: var(--avorio); }
+.elenco li .chi { display: block; font-weight: 700; }
+.elenco li .cosa { display: block; font-size: 0.86rem; opacity: 0.85; }
+.elenco .nessuna { padding: 1rem 0.5rem; font-size: 0.95rem; }
+
+.tavolo .giocatore { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-weight: 700; padding: 0.35rem 0.2rem; }
+.tavolo .giocatore .elo { font-weight: 400; color: var(--oro); }
+.scacchiera { position: relative; display: grid; grid-template-columns: repeat(8, 1fr); aspect-ratio: 1; border: 10px solid var(--bordeaux-scuro); outline: 2px solid var(--oro-chiaro); outline-offset: -6px; background: var(--bordeaux-scuro); }
+.casa { position: relative; aspect-ratio: 1; }
+.casa.chiara { background: var(--casa-chiara); }
+.casa.scura { background: var(--casa-scura); }
+.casa.ultima::after { content: ""; position: absolute; inset: 0; background: rgba(89, 13, 23, 0.28); }
+.casa svg { position: absolute; inset: 4%; width: 92%; height: 92%; z-index: 1; }
+.casa .coord { position: absolute; font-size: 0.62rem; font-weight: 700; z-index: 2; opacity: 0.75; line-height: 1; }
+.casa .coord.riga { top: 2px; left: 3px; }
+.casa .coord.colonna { bottom: 2px; right: 3px; }
+.casa.chiara .coord { color: var(--casa-scura); } .casa.scura .coord { color: var(--casa-chiara); }
+.comandi { display: flex; gap: 0.4rem; justify-content: center; margin-top: 0.8rem; flex-wrap: wrap; }
+.comandi button { font: inherit; font-weight: 700; min-width: 3rem; padding: 0.5rem 0.8rem; color: var(--avorio); background: var(--bordeaux); border: 2px solid var(--bordeaux); border-radius: 2px; cursor: pointer; }
+.comandi button:hover { background: var(--bordeaux-scuro); }
+.comandi button.secondario { background: transparent; color: var(--bordeaux); }
+.comandi button.secondario:hover { background: var(--bordeaux); color: var(--avorio); }
+.suggerimento { text-align: center; font-size: 0.85rem; margin: 0.6rem 0 0; }
+
+.foglio h2 { font-family: var(--titolo); font-weight: 600; font-size: 1.45rem; line-height: 1.2; margin: 0 0 0.2rem; }
+.foglio .dove { margin: 0 0 0.8rem; font-size: 0.93rem; }
+.foglio .risultato { font-family: var(--titolo); font-size: 1.5rem; color: var(--inchiostro); margin: 0.8rem 0 0; }
+.mosse { border-block: 3px solid var(--bordeaux); padding: 0.7rem 0; max-height: 26rem; overflow: auto; line-height: 2; color: var(--inchiostro); }
+.mosse .coppia { white-space: nowrap; }
+.mosse .n { color: var(--oro); font-weight: 700; margin-right: 0.15rem; }
+.mosse button { font: inherit; color: inherit; background: transparent; border: 0; padding: 0.05rem 0.3rem; margin-right: 0.2rem; border-radius: 2px; cursor: pointer; }
+.mosse button:hover { background: var(--casa-chiara); }
+.mosse button[aria-current="true"] { background: var(--bordeaux); color: var(--avorio); }
+.foglio .scarica { display: inline-block; margin-top: 0.9rem; font-size: 0.93rem; font-weight: 700; }
+
+/* Pagina d'ingresso del sito */
+.ingresso { min-height: 70vh; display: grid; place-items: center; text-align: center; padding: 3rem 1.25rem; }
+.ingresso img { width: 8rem; margin: 0 auto 1rem; }
+.ingresso h1 { font-family: var(--titolo); font-weight: 400; font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 0.5rem; }
+
+/* ---------- Schermi piccoli ---------- */
+@media (max-width: 60rem) {
+  .partite { grid-template-columns: 1fr; }
+  .partite .tavolo { order: 1; max-width: 34rem; width: 100%; margin-inline: auto; }
+  .partite .foglio { order: 2; }
+  .partite .elenco { order: 3; }
+  .elenco ol { max-height: 20rem; }
+}
+@media (max-width: 48rem) {
+  body { font-size: 1rem; }
+  .testata { grid-template-columns: 1fr; }
+  .testata .pannello { order: 2; min-height: 17rem; background-image: url("../img/maschera.jpg"); background-size: auto 100%; background-position: left bottom; }
+  .colonne { grid-template-columns: 1fr; }
+  .colonne > div { border-left: 0; border-top: 8px solid var(--oro); padding: 0.9rem 0.5rem; text-align: center; }
+  .colonne > div:first-child { border-top: 0; }
+  .due-liste { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; text-align: center; }
+  .albergo { grid-template-columns: 1fr; }
+  .piede { background-size: 9rem auto; padding-bottom: 9rem; }
+  table.accoppiamenti .elo { display: block; margin-left: 0; }
+  table.accoppiamenti th, table.accoppiamenti td { padding: 0.45rem 0.35rem; font-size: 0.93rem; }
+}
+
+/* ---------- Struttura a più pagine (seconda bozza) ---------- */
+.sottobarra { background: var(--avorio-chiaro); border-bottom: 2px solid var(--oro); }
+.sottobarra .contenitore { display: flex; gap: 0.2rem 1.6rem; flex-wrap: wrap; padding-block: 0.55rem; }
+.sottobarra a { text-decoration: none; font-weight: 700; font-size: 0.95rem; padding: 0.15rem 0; border-bottom: 3px solid transparent; }
+.sottobarra a[aria-current="page"] { border-bottom-color: var(--bordeaux); }
+
+.sezione > .contenitore > h2.piano { font-family: var(--testo); font-weight: 700; font-size: 1.25rem; text-transform: uppercase; transform: none; margin-bottom: 1.2rem; }
+.sezione.prima { border-top: 0; padding-top: 0.5rem; }
+
+.ingressi { list-style: none; margin: 0 auto; padding: 0; max-width: 60rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 3rem; }
+.ingressi li { border-left: 12px solid var(--oro); margin-bottom: 1.6rem; }
+.ingressi a { display: block; padding: 0.3rem 0 0.3rem 1rem; text-decoration: none; }
+.ingressi a strong { display: block; font-family: var(--titolo); font-weight: 600; font-size: 1.45rem; line-height: 1.2; }
+.ingressi a span { display: block; font-size: 0.98rem; }
+.ingressi a:hover strong { text-decoration: underline; text-decoration-color: var(--oro); }
+
+.passi { max-width: 44rem; margin: 0 auto 1.5rem; padding: 0; list-style: none; counter-reset: passo; }
+.passi li { counter-increment: passo; position: relative; padding: 0.2rem 0 1rem 3.4rem; }
+.passi li::before { content: counter(passo); position: absolute; left: 0; top: 0; width: 2.4rem; height: 2.4rem; display: grid; place-items: center; font-family: var(--titolo); font-size: 1.4rem; color: var(--avorio); background: var(--bordeaux); border-radius: 50%; }
+.passi li strong { display: block; }
+
+table.premi { width: 100%; max-width: 46rem; margin: 0 auto 1rem; border-collapse: collapse; background: var(--avorio-chiaro); }
+table.premi caption { caption-side: top; text-align: left; font-family: var(--titolo); font-weight: 600; font-size: 1.5rem; padding: 0 0 0.4rem 0.8rem; border-left: 12px solid var(--oro); margin-bottom: 0.5rem; }
+table.premi th, table.premi td { padding: 0.5rem 0.7rem; border-bottom: 1px solid #d9c9a6; text-align: left; }
+table.premi thead th { background: var(--bordeaux); color: var(--avorio); font-size: 0.85rem; }
+table.premi td.cifra, table.premi th.cifra { text-align: right; font-weight: 700; white-space: nowrap; }
+table.premi tfoot td { font-weight: 700; border-top: 3px solid var(--bordeaux); border-bottom: 0; }
+.gruppo-premi { margin-bottom: 2.4rem; }
+
+.da-completare { max-width: 44rem; margin: 1rem auto 1.5rem; padding: 0.9rem 1.1rem; border: 2px dashed var(--oro); background: var(--avorio-chiaro); font-size: 0.95rem; }
+.da-completare strong { color: var(--oro); }
+
+.indice { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: center; padding: 0; margin: 0 auto 2rem; max-width: 50rem; }
+.indice a { font-weight: 700; }
+.testo-lungo { max-width: 46rem; margin-inline: auto; }
+.testo-lungo h2 { font-size: 1.1rem; text-transform: uppercase; margin: 2.2rem 0 0.5rem; padding-top: 1rem; border-top: 3px solid var(--bordeaux); }
+.testo-lungo p { max-width: none; margin: 0 0 0.9rem; }
+
+.dove-si-gioca { max-width: 44rem; margin: 0 auto 2rem; border-left: 12px solid var(--oro); padding: 0.5rem 1.1rem; background: var(--avorio-chiaro); }
+.dove-si-gioca p { margin: 0; }
+
+.luoghi { list-style: none; padding: 0; margin: 0 auto; max-width: 46rem; }
+.luoghi li { padding: 1rem 0; border-top: 1px solid #d9c9a6; }
+.luoghi li:first-child { border-top: 0; }
+.luoghi h3 { font-family: var(--titolo); font-weight: 600; font-size: 1.45rem; margin: 0 0 0.2rem; }
+.luoghi p { margin: 0; max-width: none; }
+
+.galleria-vuota { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; max-width: 54rem; margin: 0 auto 1rem; }
+.galleria-vuota div { aspect-ratio: 4 / 3; border: 2px dashed var(--oro); background: var(--avorio-chiaro); }
+
+@media (max-width: 48rem) {
+  .ingressi { grid-template-columns: 1fr; }
+  .galleria-vuota { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Iscritti e fotografie ---------- */
+table.iscritti td.cifra, table.iscritti th.cifra { text-align: right; font-weight: 700; }
+table.iscritti td { color: var(--bordeaux); }
+.conteggio { text-align: center; font-family: var(--titolo); font-size: 1.5rem; margin: 0 0 1.5rem; }
+.conteggio strong { font-size: 2.6rem; font-weight: 600; display: block; line-height: 1; }
+
+figure.foto { margin: 0 auto 1.6rem; max-width: 54rem; }
+figure.foto img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 6px solid var(--avorio-chiaro); outline: 2px solid var(--oro-chiaro); }
+figure.foto figcaption { font-size: 0.8rem; margin-top: 0.4rem; text-align: right; opacity: 0.85; }
+.luoghi li { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 1.5rem; align-items: center; padding: 1.4rem 0; }
+.luoghi figure.foto { margin: 0; }
+.luoghi figure.foto img { aspect-ratio: 4 / 3; }
+.luoghi { max-width: 58rem; }
+@media (max-width: 48rem) { .luoghi li { grid-template-columns: 1fr; } }
+table.iscritti { table-layout: fixed; }
+table.iscritti th:nth-child(1) { width: 3rem; } table.iscritti th:nth-child(2) { width: 5rem; }
+table.iscritti th:nth-child(4) { width: 5rem; } table.iscritti th:nth-child(5) { width: 4.5rem; } table.iscritti th:nth-child(6) { width: 4.5rem; }
+
+/* ---------- Gruppi di fotografie ---------- */
+.tre-foto { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 62rem; margin: 2rem auto 0.4rem; }
+.due-foto { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; max-width: 54rem; margin: 1.6rem auto; }
+.tre-foto figure.foto, .due-foto figure.foto { margin: 0; max-width: none; }
+.tre-foto figure.foto img, .due-foto figure.foto img { aspect-ratio: 4 / 3; }
+.due-foto figure.foto figcaption { text-align: left; }
+.sezione p.credito-foto { font-size: 0.8rem; text-align: right; max-width: 62rem; margin: 0 auto 1.2rem; opacity: 0.85; }
+@media (max-width: 48rem) { .tre-foto, .due-foto { grid-template-columns: 1fr; } }
+
+/* ---------- Mappa, percorsi, rimandi ---------- */
+.mappa { max-width: 58rem; margin: 0 auto 1rem; border: 6px solid var(--avorio-chiaro); outline: 2px solid var(--oro-chiaro); background: var(--avorio-chiaro); }
+.mappa iframe { display: block; width: 100%; height: 26rem; border: 0; }
+.percorsi { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 3rem; max-width: 58rem; margin: 2rem auto 1rem; }
+.percorsi > div { border-left: 12px solid var(--oro); padding: 0.2rem 0 0.2rem 1rem; margin-bottom: 1.2rem; }
+.percorsi h3 { font-family: var(--titolo); font-weight: 600; font-size: 1.35rem; margin: 0 0 0.3rem; }
+.percorsi p { margin: 0; max-width: none; }
+.luoghi p.rimandi { margin-top: 0.5rem; font-size: 0.93rem; font-weight: 700; }
+.albergo > div > p { max-width: none; }
+@media (max-width: 48rem) { .percorsi { grid-template-columns: 1fr; } .mappa iframe { height: 18rem; } }
+.sezione p.rimandi.centrato { text-align: center; font-size: 0.95rem; font-weight: 700; }
+.percorsi > div:last-child:nth-child(odd) { grid-column: 1 / -1; }
+html { scroll-padding-top: 5rem; }
+.piede { position: relative; }
+.piede .torna-su { position: absolute; right: 0; bottom: 0; height: 100%; aspect-ratio: 690 / 829; }
+.piede .torna-su:focus-visible { outline: 3px solid var(--bordeaux); outline-offset: -3px; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ---------- Cambio lingua ---------- */
+.barra .lingue { display: flex; border: 1px solid var(--oro-chiaro); border-radius: 2px; overflow: hidden; }
+.barra nav .lingue a { padding: 0.3rem 0.55rem; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; border-bottom: 0; }
+.barra nav .lingue a[aria-current="true"] { background: var(--oro-chiaro); color: var(--bordeaux-scuro); }
+.barra nav .lingue a:not([aria-current]):hover { background: rgba(255,255,255,0.14); }
+.ingresso .scelta-lingua { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.8rem; }
+.ingresso .scelta-lingua .bottone { min-width: 9rem; }
+[hidden] { display: none !important; }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Partite – S.V.A. Carnival Chess Trophy</title>
+<link rel="stylesheet" href="../assets/css/stile.css">
+</head>
+<body id="inizio">
+
+
+<header class="barra">
+  <div class="contenitore">
+    <a class="marchio" href="index.html">S.V.A. Carnival Chess Trophy</a>
+    <nav aria-label="Sezioni del sito">
+      <a href="index.html">Il torneo</a>
+      <a href="ospitalita.html">Ospitalità</a>
+      <a href="tivoli.html">Tivoli</a>
+      <a href="turni.html">Turni e risultati</a>
+      <a href="partite.html" aria-current="page">Partite</a>
+      <a href="foto.html">Foto</a>
+      <a class="iscriviti" href="https://vesus.org/event/QPYu9NN_">Iscriviti su Vesus</a>
+      <div class="lingue" role="group" aria-label="Lingua"><a href="partite.html" lang="it" hreflang="it" aria-current="true">IT</a><a href="en/partite.html" lang="en" hreflang="en">EN</a></div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="intestazione-pagina contenitore">
+    <h1 class="titolo-pagina">Partite</h1>
+    <p>Le partite del torneo, da rivedere mossa per mossa. Saranno pubblicate qui turno dopo turno.</p>
+  </div>
+
+  <p class="in-attesa contenitore" id="nessuna-partita" hidden>Ancora nessuna partita pubblicata: le prime arriveranno dopo il primo turno, venerdì 5 febbraio 2027.</p>
+
+  <div class="partite">
+    <section class="elenco" aria-label="Elenco delle partite">
+      <label for="cerca">Cerca per giocatore, open o turno</label>
+      <input type="search" id="cerca" autocomplete="off">
+      <ol id="lista"></ol>
+    </section>
+
+    <section class="tavolo" aria-label="Scacchiera">
+      <div class="giocatore" id="giocatore-sopra"></div>
+      <div class="scacchiera" id="scacchiera" role="img"></div>
+      <div class="giocatore" id="giocatore-sotto"></div>
+      <div class="comandi">
+        <button type="button" id="inizio" aria-label="Vai all'inizio">|◀</button>
+        <button type="button" id="indietro" aria-label="Mossa precedente">◀</button>
+        <button type="button" id="avanti" aria-label="Mossa successiva">▶</button>
+        <button type="button" id="fine" aria-label="Vai alla fine">▶|</button>
+        <button type="button" id="ruota" class="secondario">Ruota scacchiera</button>
+      </div>
+      <p class="suggerimento">Puoi usare anche le frecce ← → della tastiera.</p>
+    </section>
+
+    <section class="foglio" aria-label="Mosse della partita">
+      <h2 id="titolo-partita"></h2>
+      <p class="dove" id="dove"></p>
+      <div class="mosse" id="mosse"></div>
+      <p class="risultato" id="risultato"></p>
+      <a class="scarica" id="scarica" href="#">Scarica la partita in PGN</a>
+      <p style="font-size:0.85rem;margin-top:1.5rem">Disegno dei pezzi di Colin M.L. Burnett, con licenza libera.</p>
+    </section>
+  </div>
+
+</main>
+
+<footer class="piede">
+  <a class="torna-su" href="#inizio" title="Torna all'inizio della pagina" aria-label="Torna all'inizio della pagina"></a>
+  <div class="contenitore">
+    <div class="loghi">
+      <img src="../assets/img/fsi.jpg" alt="Federazione Scacchistica Italiana">
+      <img src="../assets/img/lazio.jpg" alt="Comitato Regionale Lazio">
+      <img src="../assets/img/coni.jpg" alt="Disciplina sportiva associata riconosciuta dal CONI">
+      <img src="../assets/img/duetorri.jpg" alt="Le Due Torri, tutto per gli scacchi">
+    </div>
+    <p><strong>A.S.D. Scacchi Valle dell'Aniene</strong></p>
+    <p>Sito ufficiale dell'associazione: <a href="https://www.scacchianiene.it">www.scacchianiene.it</a></p>
+    <p>Scrivi a <a href="mailto:info@scacchianiene.it">info@scacchianiene.it</a></p>
+  </div>
+</footer>
+<script src="../assets/js/pezzi.js"></script>
+<script src="../assets/dati/partite.js"></script>
+<script src="../assets/js/visualizzatore.js"></script>
+</body>
+</html>
