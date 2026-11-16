@@ -328,3 +328,7 @@ html { scroll-behavior: smooth; }
 .ingresso .scelta-lingua { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.8rem; }
 .ingresso .scelta-lingua .bottone { min-width: 9rem; }
 [hidden] { display: none !important; }
+
+/* Su schermi stretti il menu va su piu' righe: non resta fisso in alto, cosi' non copre i titoli delle sezioni. */
+@media (max-width: 1150px) { html { scroll-padding-top: 7.5rem; } }
+@media (max-width: 900px) { .barra { position: static; } html { scroll-padding-top: 1rem; } }
